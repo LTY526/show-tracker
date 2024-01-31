@@ -7,8 +7,8 @@ import SideNav from "@/app/ui/side-nav";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Test",
-  description: "123",
+  title: "Show Tracker",
+  description: "To keep track of your watch list",
 };
 
 export default function RootLayout({
