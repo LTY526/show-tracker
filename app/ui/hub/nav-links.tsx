@@ -6,14 +6,14 @@ import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
 const links = [
-  { name: 'Search Show', href: '/search-show', icon: FilmIcon },
+  { name: 'Search Show', href: '/hub/search-show', icon: FilmIcon },
 ];
 
 export default function NavLinks() {
   const pathname = usePathname();
 
   return (
-    <div className='flex grow flex-row space-x-2 md:flex-col md:space-x-0 md:space-y-2'>
+    <div className='flex flex-row space-x-2 grow md:flex-col md:space-x-0 md:space-y-2'>
       {links.map((link) => {
         const LinkIcon = link.icon;
         return (

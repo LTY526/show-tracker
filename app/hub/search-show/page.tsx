@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
-import SearchInput from '@/app/ui/search-show/search-input';
-import SearchResult from '@/app/ui/search-show/search-result';
+import SearchInput from '@/app/ui/hub/search-show/search-input';
+import SearchResult from '@/app/ui/hub/search-show/search-result';
 import { Suspense } from 'react';
-import { ShowsSkeleton } from '@/app/ui/search-show/show-skeleton';
+import { ShowsSkeleton } from '@/app/ui/hub/search-show/show-skeleton';
 import { SearchTvShows } from '@/app/lib/tmdb-apis';
-import SearchPagination from '@/app/ui/search-show/search-pagination';
-import ResultType from '@/app/ui/search-show/result-type';
+import SearchPagination from '@/app/ui/hub/search-show/search-pagination';
+import ResultType from '@/app/ui/hub/search-show/result-type';
 
 export const metadata: Metadata = {
   title: 'Search for shows',

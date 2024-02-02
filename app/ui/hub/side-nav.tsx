@@ -1,5 +1,5 @@
-import NavLinks from "@/app/ui/nav-links";
-import { ThemeSwitcher } from "@/app/ui/theme-switcher";
+import NavLinks from "@/app/ui/hub/nav-links";
+import { ThemeSwitcher } from "@/app/ui/hub/theme-switcher";
 
 export default function SideNav() {
   return (

@@ -2,13 +2,13 @@ import { Card, Skeleton } from "@nextui-org/react";
 
 export function ShowSkeleton() {
   return (
-    <Card className="w-52 space-y-5 p-4" radius="lg">
+    <Card className="p-4 space-y-5 w-52" radius="lg">
       <Skeleton className="rounded-xl">
         <div className="h-56 rounded-lg bg-default-300"></div>
       </Skeleton>
       <div className="space-y-3">
         <Skeleton className="w-30 rounded-xl">
-          <div className="w-30 h-3 bg-default-30"></div>
+          <div className="h-3 w-30 bg-default-30"></div>
         </Skeleton>
         <Skeleton className="w-20 rounded-xl">
           <div className="w-20 h-3 bg-default-30"></div>

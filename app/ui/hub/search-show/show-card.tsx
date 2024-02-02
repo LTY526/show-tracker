@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ShowCard({ type, item }: { type: 'shows' | 'movies', item: TMDBItem }) {
   return (
-    <Card className="w-52 space-y-2 p-4" radius="lg">
+    <Card className="p-4 space-y-2 w-52" radius="lg">
       <div className="h-[264px] w-[176px] rounded-xl">
         {item.poster_path == null
           ? <div className="h-[264px] w-[176px] rounded-lg bg-default-100"></div>
@@ -12,9 +12,9 @@ export default function ShowCard({ type, item }: { type: 'shows' | 'movies', ite
             src={`https://image.tmdb.org/t/p/w342${item.poster_path}`}
             alt={type == 'shows' ? item.name : item.title} width={200} height={300} />}
       </div>
-      <div className="w-44 space-y-2">
+      <div className="space-y-2 w-44">
         <Tooltip content={type == 'shows' ? item.name : item.title}>
-          <p className="text-md font-semibold overflow-hidden whitespace-nowrap text-ellipsis">
+          <p className="overflow-hidden font-semibold text-md whitespace-nowrap text-ellipsis">
             {type == 'shows' ? item.name : item.title}
           </p>
         </Tooltip>
