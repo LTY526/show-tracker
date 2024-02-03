@@ -1,9 +1,9 @@
-import NavLinks from "@/app/ui/hub/nav-links";
-import { ThemeSwitcher } from "@/app/ui/hub/theme-switcher";
+import NavLinks from '@/app/ui/hub/nav-links';
+import { ThemeSwitcher } from '@/app/ui/hub/theme-switcher';
 
 export default function SideNav() {
   return (
-    <div className='bg-[#f9fafb] dark:bg-[#18181b] h-full flex flex-row md:flex-col justify-between pt-6 p-2'>
+    <div className="flex h-full flex-row justify-between bg-[#f9fafb] p-2 pt-6 dark:bg-[#18181b] md:flex-col">
       <NavLinks />
       <ThemeSwitcher />
     </div>

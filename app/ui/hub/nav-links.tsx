@@ -13,7 +13,7 @@ export default function NavLinks() {
   const pathname = usePathname();
 
   return (
-    <div className='flex flex-row space-x-2 grow md:flex-col md:space-x-0 md:space-y-2'>
+    <div className="flex grow flex-row space-x-2 md:flex-col md:space-x-0 md:space-y-2">
       {links.map((link) => {
         const LinkIcon = link.icon;
         return (
@@ -22,9 +22,10 @@ export default function NavLinks() {
             href={link.href}
             className={clsx(
               'flex h-[48px] grow items-center justify-center gap-2 rounded-md',
-              'bg-gray-50 dark:bg-[#18181b] dark:hover:bg-[#27272a] p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3',
+              'bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 dark:bg-[#18181b] dark:hover:bg-[#27272a] md:flex-none md:justify-start md:p-2 md:px-3',
               {
-                'bg-sky-100 dark:bg-[#27272a] text-blue-600': pathname === link.href,
+                'bg-sky-100 text-blue-600 dark:bg-[#27272a]':
+                  pathname === link.href,
               },
             )}
           >
