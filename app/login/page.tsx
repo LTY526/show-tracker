@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 export default async function Page() {
   return (
     <>
+      <div className="min-h-screen w-full px-8 md:px-5 md:w-[500px]  flex flex-col mx-auto justify-center gap-5"></div>
       <LoginForm />
     </>
   );
