@@ -1,5 +1,5 @@
 import ShowCard from '@/app/ui/hub/search-show/show-card';
-import { TMDBItem } from '@/app/lib/definitions';
+import { TMDBItem } from '@/lib/definitions';
 
 export default async function SearchResult({
   type,

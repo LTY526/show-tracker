@@ -1,5 +1,5 @@
 import { Card, Tooltip } from '@nextui-org/react';
-import { TMDBItem } from '@/app/lib/definitions';
+import { TMDBItem } from '@/lib/definitions';
 import Image from 'next/image';
 
 export default function ShowCard({

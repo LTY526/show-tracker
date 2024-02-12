@@ -3,22 +3,31 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Button, Card, CardHeader, Input } from '@nextui-org/react';
 import { ArrowRightStartOnRectangleIcon } from '@heroicons/react/16/solid';
+import { useEffect, useState } from 'react';
 
 export default function LoginForm() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   const {
     register,
     handleSubmit,
     trigger,
     formState: { errors },
-  } = useForm({ defaultValues: { email: '', password: '' } });
+  } = useForm();
+  const [loading, setLoading] = useState(false);
 
   const onSubmit: SubmitHandler<Record<string, string>> = (data) => {
+    setLoading(true);
     console.log(data);
+    setLoading(false);
   };
+
+  if (!mounted) return null;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="xs:w-[440px] mx-auto flex h-screen w-full flex-col justify-center px-8 sm:w-[500px]">
+      <div className="mx-auto flex h-screen w-full flex-col justify-center px-8 xs:w-[440px] sm:w-[500px]">
         <Card className="flex w-full justify-center gap-5 px-8 pb-8 pt-6">
           <CardHeader className="justify-center p-0">
             <p className="font-bold">Please login</p>
@@ -37,7 +46,7 @@ export default function LoginForm() {
                 },
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i,
-                  message: 'Invalid email address',
+                  message: 'This email address is invalid',
                 },
               })}
               isInvalid={errors.email != undefined}
@@ -61,11 +70,12 @@ export default function LoginForm() {
             />
           </div>
           <Button
+            isLoading={loading}
             variant="faded"
             type="submit"
-            startContent={<ArrowRightStartOnRectangleIcon />}
+            startContent={!loading && <ArrowRightStartOnRectangleIcon />}
           >
-            <span className="xs:block hidden">Login</span>
+            <span className="hidden xs:block">Login</span>
           </Button>
         </Card>
       </div>

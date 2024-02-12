@@ -1,4 +1,4 @@
-import { TMDBApiResult } from '@/app/lib/definitions';
+import { TMDBApiResult } from '@/lib/definitions';
 
 export async function SearchTvShows(
   type: 'shows' | 'movies',

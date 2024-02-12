@@ -1,4 +1,4 @@
-import { PokemonApiResult } from '@/app/lib/definitions';
+import { PokemonApiResult } from '@/lib/definitions';
 
 export async function GetPokemonDataSimple(): Promise<PokemonApiResult> {
   return await fetch('https://pokeapi.co/api/v2/pokemon?limit=20').then((res) =>

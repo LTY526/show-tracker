@@ -3,7 +3,7 @@ import SearchInput from '@/app/ui/hub/search-show/search-input';
 import SearchResult from '@/app/ui/hub/search-show/search-result';
 import { Suspense } from 'react';
 import { ShowsSkeleton } from '@/app/ui/hub/search-show/show-skeleton';
-import { SearchTvShows } from '@/app/lib/tmdb-apis';
+import { SearchTvShows } from '@/lib/tmdb-apis';
 import SearchPagination from '@/app/ui/hub/search-show/search-pagination';
 import ResultType from '@/app/ui/hub/search-show/result-type';
 
