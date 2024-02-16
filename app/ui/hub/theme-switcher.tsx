@@ -16,7 +16,7 @@ export function ThemeSwitcher() {
   if (!mounted) return null;
 
   return theme === 'light' ? (
-    <Tooltip placement="right" content="Switch to Dark mode">
+    <Tooltip placement="top" content="Switch to Dark mode">
       <Button
         isIconOnly
         variant="faded"
@@ -27,7 +27,7 @@ export function ThemeSwitcher() {
       </Button>
     </Tooltip>
   ) : (
-    <Tooltip placement="right" content="Switch to Light mode">
+    <Tooltip placement="top" content="Switch to Light mode">
       <Button
         isIconOnly
         variant="faded"
