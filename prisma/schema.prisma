@@ -18,3 +18,19 @@ model User {
   updatedAt DateTime @updatedAt @map(name: "updated_at")
   // @@map(name: "users")
 }
+
+// model WatchedShow {
+//   // id        String   @id @default(cuid())
+//   // showId    String
+//   // userId    String
+//   // createdAt DateTime @default(now()) @map(name: "created_at")
+//   // updatedAt DateTime @updatedAt @map(name: "updated_at")
+//   // @@map(name: "watched_shows")
+
+//   // showType tvshow | movie
+//   // showId String
+//   // showName
+//   // userId String
+//   // updatedAt
+//   // watchStatus watching | watched | onHold | dropped | towatch
+// }
