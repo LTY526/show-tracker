@@ -1,4 +1,6 @@
+import prisma from '@/lib/prisma';
 import NextAuth from 'next-auth';
+import bcrypt from 'bcrypt';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 const handler = NextAuth({
@@ -12,20 +14,35 @@ const handler = NextAuth({
     CredentialsProvider({
       name: 'Credentials',
       credentials: {
-        username: { label: 'Email', type: 'text', placeholder: 'jsmith' },
+        email: { label: 'Email', type: 'text', placeholder: 'jsmith' },
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials, req) {
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/login`, {
-          method: 'POST',
-          body: JSON.stringify(credentials),
-          headers: { 'Content-Type': 'application/json' },
-        });
-        const user = await res.json();
-        if (res.ok && user) {
-          return user;
+        if (!credentials) {
+          return null;
         }
-        return null;
+
+        const user = await prisma.user.findUnique({
+          where: {
+            email: credentials.email,
+          },
+        });
+        if (user == null) {
+          return null;
+        }
+
+        const matched = await bcrypt.compare(
+          credentials.password,
+          user.password || '',
+        );
+        if (!matched) {
+          return null;
+        }
+
+        return {
+          id: user.id,
+          email: user.email,
+        };
       },
     }),
   ],
